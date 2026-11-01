@@ -1,0 +1,11 @@
+# Zeilenenden im Repo festnageln, unabhängig von core.autocrlf.
+#
+# Gemessen 2026-11-01: die Attribute überstimmen core.autocrlf. Ohne diese
+# Regeln stellt autocrlf=true den Arbeitsbaum auf CRLF, während die Werkzeuge
+# LF schreiben — git meldet dann " M" bei leerem diff (das Phantom), und beim
+# Add warnt es "LF will be replaced by CRLF".
+#
+# Messreihen und Begründung: reference/git-zeilenenden.md im Agent-Memory.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
